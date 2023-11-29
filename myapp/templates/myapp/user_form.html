@@ -1,0 +1,20 @@
+<!-- myapp/templates/myapp/yourmodel_form.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Edit{% else %}Create{% endif %} User</title>
+</head>
+<body>
+
+<h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} User</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<a href="{% url 'user_list' %}">Back to YourModel List</a>
+
+</body>
+</html>

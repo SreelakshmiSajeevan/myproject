@@ -1,0 +1,21 @@
+<!-- myapp/templates/myapp/yourmodel_confirm_delete.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete {{ User.name }}</title>
+</head>
+<body>
+
+<h1>Delete {{ User.name }}</h1>
+
+<p>Are you sure you want to delete "{{ User.name }}"?</p>
+
+<form method="post" style="display: inline;">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete it.">
+</form>
+
+<a href="{% url 'User_list' %}">No, go back to YourModel List</a>
+
+</body>
+</html>

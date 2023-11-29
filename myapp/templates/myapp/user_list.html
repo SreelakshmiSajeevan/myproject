@@ -1,0 +1,28 @@
+<!-- myapp/templates/myapp/yourmodel_list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YourModel List</title>
+</head>
+<body>
+
+<h1>YourModel List</h1>
+
+<ul>
+    {% for item in user_list %}
+        <li>
+            <a href="{% url 'user_detail' pk=item.pk %}">{{ item.name }}</a>
+            <ul>
+                <li>{{ item.description}}</li>
+            </ul>
+            
+            - <a href="{% url 'user_edit' pk=item.pk %}">Edit</a>
+            - <a href="{% url 'user_delete' pk=item.pk %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'user_create' %}">Create new YourModel</a>
+
+</body>
+</html>
